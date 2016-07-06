@@ -1,65 +1,14 @@
 ---
-title: MGLobel
+title: Casper Fermentables
 ---
-#app
-  = partial 'shared/contact_form'
-  .container
-    .hero
-      .hero-title
-        %h1
-          MGLOBEL
-        %h2
-          Hand-crafted business technology.
-        %a.button{:href => "javascript:void(0)", "v-on:click" => "openModal"} Get in Contact
-      %nav
-        %ul
-          %li
-            %b On the web:
-          %li
-            %a{:href => "https://www.linkedin.com/in/michaelglobel", :target => "_blank"} LinkedIn
-          %li
-            %a{:href => "https://github.com/mglobel/", :target => "_blank"} Github
-          %li
-            %a{:href => "https://twitter.com/ringmylobel", :target => "_blank"} Twitter
-          %li
-            %a{:href => "http://hypem.com/LobasaurusRex", :target => "_blank"} Jams
-    %hr
-      = partial 'shared/portfolio'
-    %footer
-      %small
-        MGLOBEL LLC &copy; #{Date.today.year}
-        %br
-        Based in Austin, TX
-        %br
-        Sourced on 
-        %a{href: 'https://github.com/mglobel/mglobel'} Github  
-      
-
-
-:javascript
-  new Vue({
-    el: '#app',
-    data: {
-      displayForm: 'none'
-    },
-    ready: function() {
-      if(window.location.hash == '#contact-form') {
-        this.$set('displayForm', 'block')
-      }
-      document.addEventListener("keydown", (e) => {
-        if (e.keyCode == 27) {
-          this.$set('displayForm', 'none')
-        }
-      });
-    },
-    methods: {
-      openModal: function () {
-        this.$set('displayForm', 'block')
-      },
-      closeModal: function (e) {
-        if (e.target.className == 'modal-background') {
-          this.$set('displayForm', 'none')
-        }
-      }
-    }
-  })
+.container
+  .logo
+    = image_tag 'images/logo.jpg'
+  %nav
+    = link_to 'Home', '/'
+    |
+    = link_to 'About', '/about.html'
+    |
+    = link_to 'Order', '/'
+    |
+    = link_to 'Contact', '/'
