@@ -15,3 +15,11 @@
 
   %body{class: page_classes}
     = yield
+  %nav
+    = link_to 'Home', '/'
+    |
+    = link_to 'About', '/about.html'
+    |
+    = link_to 'Order', '/order.html'
+    |
+    = link_to 'Contact', '/contact.html'
