@@ -15,23 +15,22 @@
   <body class='order order_index'>
     <div class='container'>
       <div class='background'>
-        <div class='form' style='padding: 15px;'>
-          <div class='header'>
+        <form action='https://formspree.io/casperfermentables@gmail.com' method='POST' style='padding: 15px;'>
+          <div class='header' style='padding: 10px;'>
             <p>
               Signup to get information about on-demand delivery options.
             </p>
             <small>
-              Delivery is currently only available for 78701 78702, and
-              78703 zip codes.
+              Delivery is currently only available for 78701 and 78702
+              zip codes.
             </small>
           </div>
           <div class='form-input' style='padding-top: 20px'>
-            <input placeholder='Email Address'>
+            <input name='reply_to' placeholder='Email Address' required style='padding: 5px; border-radius: 10px;' type='email'>
           </div>
-          <button style='margin-top: 20px;, padding: 25px;'>
-            Request Delivery Information
-          </button>
-        </div>
+          <input name='_gotcha' style='display: none;' type='text'>
+          <input class='submit-button' type='submit' value='REQUEST DELIVERY'>
+        </form>
       </div>
     </div>
   </body>
