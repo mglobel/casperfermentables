@@ -4,14 +4,14 @@ title: Order | Casper Fermentables
 
 .container
   .background
-    .form{style: 'padding: 15px;'}
-      .header
+    %form{action: 'https://formspree.io/casperfermentables@gmail.com', method: 'POST', style: 'padding: 15px;'}
+      .header{style: 'padding: 10px;'}
         %p
           Signup to get information about on-demand delivery options.
         %small
-          Delivery is currently only available for 78701 78702, and 
-          78703 zip codes.
+          Delivery is currently only available for 78701 and 78702 
+          zip codes.
       .form-input{style: 'padding-top: 20px'}
-        %input{placeholder: 'Email Address'}
-      %button{style: 'margin-top: 20px;, padding: 25px;'} 
-        Request Delivery Information
+        %input{name: 'reply_to', type: 'email', placeholder: 'Email Address', style: 'padding: 5px; border-radius: 10px;', required: true}
+      %input{type: 'text', name: '_gotcha', style: 'display: none;'}
+      %input{type: 'submit', value: 'REQUEST DELIVERY', class: 'submit-button'} 

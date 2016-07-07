@@ -48,3 +48,27 @@ footer {
   justify-content: center;
   text-align: center;
 }
+
+.submit-button {
+  margin-top: 20px;
+  padding: 10px;
+  color: white;
+  background-color: #37766C;
+  border: 10px white solid;
+  cursor: pointer;
+}
+
+
+@media (max-width: 480px) {
+  p {
+    font-size: .7em;
+    padding: 10px;
+  }
+
+  .submit-button {
+    padding: 5px;
+    border: 6px white solid;
+    font-size: .8em;
+  }
+
+}
