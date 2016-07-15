@@ -17,7 +17,7 @@
     <div id='app'>
       <div class='logo'>
         <div class='container'>
-          <div class='background'>
+          <div class='green-circle'>
             <router-view>
               <div class='copy' style='padding: 50px;'>
                 <img src="/images/ghost-radish.png" alt="Ghost radish" />
@@ -59,8 +59,9 @@
       })
       
       var About = Vue.extend({
-        template: `
-          <p>
+        template: 
+        `
+          <p class='about'>
             Casper Fermentables are made with precision and care in East Austin, TX. 
             <br /><br />
             Pickles, mustard, and probiotic sports drinks can be found at the Hope Farmer's 
@@ -136,9 +137,6 @@
         }
       })
       
-      // Now we can start the app!
-      // The router will create an instance of App and mount to
-      // the element matching the selector #app.
       router.start(App, '#app')
     </script>
   </body>
