@@ -9,6 +9,7 @@ body {
 nav {
   padding-top: 30px;
   font-size: 1.3rem;
+  text-align: center;
 }
 
 footer {
@@ -36,6 +37,10 @@ a:active {
     width: 80%;
     height: 80%;
   }
+
+  h2 {
+    margin: 0;
+  }
 }
 
 .container {
@@ -55,6 +60,10 @@ a:active {
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+.copy {
+  margin: 60px;
 }
 
 .submit-button {
