@@ -10,20 +10,136 @@
     <link href="/stylesheets/application.css" rel="stylesheet" />
     <script src="/javascripts/all.js"></script>
     <script src="/javascripts/vue.js"></script>
+    <script src="/javascripts/vue_router.js"></script>
     
   </head>
   <body class='index'>
-    <div class='logo'>
-      <img src="/images/logo.jpg" alt="Logo" />
+    <div id='app'>
+      <div class='logo'>
+        <div class='container'>
+          <div class='background'>
+            <router-view>
+              <div class='copy' style='padding: 50px;'>
+                <img src="/images/ghost-radish.png" alt="Ghost radish" />
+                <h2>
+                  CASPER
+                </h2>
+                <h2>
+                  FERMENTABLES
+                </h2>
+              </div>
+            </router-view>
+          </div>
+        </div>
+      </div>
+      <nav>
+        <a v-link="{path: '/'}">Home</a>
+        |
+        <a v-link="{ path: '/about' }">About</a>
+        |
+        <a v-link="{ path: '/order' }">Order</a>
+        |
+        <a v-link="{ path: '/contact' }">Contact</a>
+      </nav>
     </div>
+    <script>
+      var Home = Vue.extend({
+        template: 
+        `
+          <div class="copy" style="padding: 50px;">
+            <img src='/images/ghost-radish.png' />
+            <h2>
+              CASPER
+            </h2>
+            <h2>
+              FERMENTABLES
+            </h2>
+          </div>
+        `
+      })
+      
+      var About = Vue.extend({
+        template: `
+          <p>
+            Casper Fermentables are made with precision and care in East Austin, TX. 
+            <br /><br />
+            Pickles, mustard, and probiotic sports drinks can be found at the Hope Farmer's 
+            Market from 11 AM to 3 PM on Sundays. On-demand delivery and pick-up options
+            coming soon!
+          </p>
+        `
+      })
+      
+      var Order = Vue.extend({
+        template: 
+        `
+          <form action="https://formspree.io/casperfermentables@gmail.com" method="POST" style="padding: 15px;">
+            <div class="header" style="padding: 10px;">
+              <p>
+                Signup to get information about on-demand delivery options.
+              </p>
+              <small>
+                Delivery is currently only available for 78701 and 78702 
+                zip codes.
+              </small>
+            </div>
+            <div class="form-input" style="padding-top: 20px">
+              <input name="reply_to" placeholder="Email Address" required="<%= true %>" style="padding: 5px; border-radius: 10px;" type="email"></input>
+            </div>
+            <input name="_gotcha" style="display: none;" type="text"></input>
+            <input name="_next" type="hidden" value="/thanks"></input>
+            <input class="submit-button" type="submit" value="REQUEST DELIVERY"></input>
+          </form>
+        `
+      })
+      
+      var Contact = Vue.extend({
+        template: 
+        `
+          <p style="line-height: 15px; padding: 80px;">
+            You can reach us at 
+            <br/>
+            <br/>
+            <a href="mailto:casperfermentables@gmail.com" style="color: white;">casperfermentables@gmail.com</a>
+          </p>
+        `
+      })
+      
+      // The router needs a root component to render.
+      // For demo purposes, we will just use an empty one
+      // because we are using the HTML as the app template.
+      // !! Note that the App is not a Vue instance.
+      var App = Vue.extend({})
+      
+      // Create a router instance.
+      // You can pass in additional options here, but let's
+      // keep it simple for now.
+      var router = new VueRouter()
+      
+      // Define some routes.
+      // Each route should map to a component. The "component" can
+      // either be an actual component constructor created via
+      // Vue.extend(), or just a component options object.
+      // We'll talk about nested routes later.
+      router.map({
+        '/': {
+          component: Home
+        },
+        '/about': {
+            component: About
+        },
+        '/order': {
+            component: Order
+        },
+        '/contact': {
+            component: Contact
+        }
+      })
+      
+      // Now we can start the app!
+      // The router will create an instance of App and mount to
+      // the element matching the selector #app.
+      router.start(App, '#app')
+    </script>
   </body>
-  <nav>
-    <a href="/">Home</a>
-    |
-    <a href="/about/">About</a>
-    |
-    <a href="/order/">Order</a>
-    |
-    <a href="/contact/">Contact</a>
-  </nav>
 </html>
