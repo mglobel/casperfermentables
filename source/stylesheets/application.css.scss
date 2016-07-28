@@ -15,8 +15,6 @@ nav {
   padding-bottom: 20px;
   max-width: 600px;
   max-height: 600px;
-  display: flex;
-  justify-content: center;
 
   img {
     width: 80%;
@@ -33,8 +31,6 @@ nav {
 }
 
 .green-circle {
-  position: relative;
-  display: inline-block;
   width: 100%;
   height: 0;
   padding: 50% 0;
@@ -61,6 +57,7 @@ nav {
 }
 
 
+
 @media (max-width: 480px) {
   p {
     font-size: .6em;
@@ -73,4 +70,27 @@ nav {
     font-size: .8em;
   }
 
+  .copy {
+    img {
+      transform: scale(.8);
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+  }
+
+}
+
+.header {
+  margin-top: 10px; 
+
+  p {
+    margin: 0px;
+    padding-top: 10px;
+  }
+}
+
+input {
+  margin-bottom: 0px;
 }

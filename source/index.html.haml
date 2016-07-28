@@ -6,12 +6,6 @@ title: Casper Fermentables
     .container
       .green-circle
         %router-view
-          .copy{style: 'padding: 50px;'}
-            = image_tag '/images/ghost-radish.png'
-            %h2
-              CASPER
-            %h2
-              FERMENTABLES
   %nav
     :plain
       <a v-link="{path: '/'}">Home</a>
@@ -60,12 +54,12 @@ title: Casper Fermentables
           <p>
             Signup to get information about on-demand delivery options.
           </p>
-          <small>
+          <p>
             Delivery is currently only available for 78701 and 78702 
             zip codes.
-          </small>
+          </p>
         </div>
-        <div class="form-input" style="padding-top: 20px">
+        <div class="form-input">
           <input name="reply_to" placeholder="Email Address" required="<%= true %>" style="padding: 5px; border-radius: 10px;" type="email"></input>
         </div>
         <input name="_gotcha" style="display: none;" type="text"></input>
